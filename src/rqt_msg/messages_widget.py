@@ -75,7 +75,7 @@ class MessagesWidget(QWidget):
         self.setObjectName(ui_filename)
         self._mode = mode
 
-        self._add_button.setIcon(QIcon.fromTheme('list-add', QIcon(QPixmap(os.path.join(rp.get_path('rqt_gui'), 'resource/icons/list-add.png')))))
+        self._add_button.setIcon(QIcon.fromTheme('list-add', QIcon(QPixmap(os.path.join(self._rospack.get_path('rqt_gui'), 'resource/icons/list-add.png')))))
         self._add_button.clicked.connect(self._add_message)
         self._refresh_packages(mode)
         self._refresh_msgs(self._package_combo.itemText(0))
