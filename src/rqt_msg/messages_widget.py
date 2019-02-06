@@ -34,7 +34,7 @@ import os
 
 from python_qt_binding import loadUi
 from python_qt_binding.QtCore import Qt
-from python_qt_binding.QtGui import QIcon
+from python_qt_binding.QtGui import QIcon, QPixmap
 from python_qt_binding.QtWidgets import (QAction, QMenu, QMessageBox,
                                          QTreeView, QWidget)
 import roslib
@@ -75,7 +75,7 @@ class MessagesWidget(QWidget):
         self.setObjectName(ui_filename)
         self._mode = mode
 
-        self._add_button.setIcon(QIcon.fromTheme('list-add'))
+        self._add_button.setIcon(QIcon.fromTheme('list-add', QIcon(QPixmap(os.path.join(rp.get_path('rqt_gui'), 'resource/icons/list-add.png')))))
         self._add_button.clicked.connect(self._add_message)
         self._refresh_packages(mode)
         self._refresh_msgs(self._package_combo.itemText(0))
