@@ -16,3 +16,6 @@ install(DIRECTORY resource
 install(PROGRAMS scripts/rqt_msg
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
+if(WIN32)
+  install_python_cli(rqt_msg)
+endif()
